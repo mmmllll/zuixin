@@ -45,7 +45,7 @@
 
         let interval = presentTime - parseInt(localStorage.getItem('previousAccessTime'), 10);
 
-        if (interval > 1000) {
+        if (interval > 2000) {
 
             localStorage.setItem('previousAccessTime', presentTime);
 
