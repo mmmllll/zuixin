@@ -11,37 +11,6 @@
 </head>
 
 <body>
-        <script>
-
-    let presentTime = (new Date()).getTime(),
-
-        hrefWithoutSearch = location.protocol + '//' + location.host + location.pathname;
-
-
-
-    if (localStorage.getItem('previousHref') === null) {
-
-        localStorage.setItem('previousHref', hrefWithoutSearch + "?v=" + presentTime);
-
-        localStorage.setItem('previousAccessTime', presentTime);
-
-        location.href = hrefWithoutSearch + "?v=" + presentTime;
-
-    } else {
-
-        let interval = presentTime - parseInt(localStorage.getItem('previousAccessTime'), 10);
-
-        if (interval > 200) {
-
-            localStorage.setItem('previousAccessTime', presentTime);
-
-            location.href = hrefWithoutSearch + "?v=" + presentTime;
-
-        }
-
-    }
-
-    </script>
 <!--top开始-->
 <div class="banner"><P>
 <h9>首次加载，多等待！加载失败，重新进入！遇到密码都一样！</h9><br>
