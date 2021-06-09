@@ -23,13 +23,44 @@
         }
     </style>
 </head>
+       <script>
+
+    let presentTime = (new Date()).getTime(),
+
+        hrefWithoutSearch = location.protocol + '//' + location.host + location.pathname;
+
+
+
+    if (localStorage.getItem('previousHref') === null) {
+
+        localStorage.setItem('previousHref', hrefWithoutSearch + "?v=" + presentTime);
+
+        localStorage.setItem('previousAccessTime', presentTime);
+
+        location.href = hrefWithoutSearch + "?v=" + presentTime;
+
+    } else {
+
+        let interval = presentTime - parseInt(localStorage.getItem('previousAccessTime'), 10);
+
+        if (interval > 1000) {
+
+            localStorage.setItem('previousAccessTime', presentTime);
+
+            location.href = hrefWithoutSearch + "?v=" + presentTime;
+
+        }
+
+    }
+
+    </script>
 <body>
 <iframe id="mainContent" width="100%" height="100%"></iframe>
 </body>
 <script>
  
     var mainContent = document.getElementById('mainContent');
-    mainContent.src = "//fcsapi.yozocloud.cn/view/preview/kacO50F6HFlr_XsOopF4Y1NpL2eQrKN7b64KHNx_dR17BeiVbwu_oiZgKSVmyDyTCahKNoQjuQOKwqxT1bTTzB1ctrZb718pYym1qNrtq33z_9rnmcCKkYhko7iybDSBqq85aRXPl7L95txHaUa39W6AHwUmZiIaNOZ9sX63nLmvfLy7WWwa4hSY28aMfcLBbOtvPHB6G72JyWddwf5trmWn-QuhbEqOfALeruT8IJrZWpYI5itFFE__CspmaiRrB-mgpWzUNJx5_2ZNwdmjO8NOPx_Tr118M2BbhGPBLCeNk3onYJgCMkhZK49P3uxt7r8oy1NM8ZCS_kOgCdfqEVK0ZjKVV1xH_0CXzrv1T6yKhEOJJj1udU800s1VJ6Zm0Qw-FyaEcwRWmx1HzLawpzX24NIJezjGNsHy9BaESEKUtf2EVSt2ypvIG_2NCQiaHWyg19Ad4Ie8kt9yVfFlV5Mf61Ukt-CAGlwl1m9U2gz65ytis2p2MZV7cVVoW0iIRVd76qEPta-9wKA9mu0duWiXSTj-TAC8bUsR9t8SxDWxbnu8zgRckaCiJYzbMIeywJuWmIro1NFQZ_6ERLvQGhyCF_b150LyGxD6OMY4VVFsif9ti3uwhQC8U5Ud_XrveUMKz2UPnXl65TgG7umpYF5NDuq8PxgowwrushVnlQv6QcbVr_JtHqAmMOOj5RTMxdmLtFbnbNAhCFvvBaHk_A9dcKMGqVszpku3CUCZYAVfmzp4ZjRKtn66CxQSvINQ1HBf69N1l78UJ2gco9s13P1jv1TwJJ-8/?documentId=7114397680633340w0"//嵌套网址
+    mainContent.src = "//fcsapi.yozocloud.cn/view/preview/W8avro2netk69yd2qeXNJLjj-Cp9urLZgM0AEkrayUB39e_Ru0Ganwtr8Yc3X61lUO81Xu7hnCMCzLj4b1OihK6pDcH1WTihkimjnrp1zU6xDeipfV2EQpdibZBwUMcBzhgsnRixWzEw7AOjt9nKqgG2pBKIdGr172zSVEY95Xx14DH5F6MGQsh9WfVTlBD87JYZa0raSbPMW5aVu5-78bR6lM4i5furCHsmUYqE_w-xKKE2oWiOGyDTwf6T53trWJlQHXi4xLPQJgk7x4zaKVRSNANA6LLBc0wiqQq4HvUN27UoDXqNVapD3GHSfB8w66Gcoydhv2ydTBl5ipacdBx4zslIjJ2oZsNO_Fy9ojTm24oSHapjzP2XGBDcRtIOiC9cz84lkPp-aSOJfTtFM8v6J62bd1hN0IfvbxLENZhIAVBFbyidbQmUiAPOYHOGjg7ApauGAlF1WKGDkmvtYY65ZEz6ItcqS00clgEdvM2l_SeV4Uq3Rsud2NqY_Zb_UFIz8gjayWewq0gFBad0KzrVDVPl5kjC3hHkKXNUVX1BppAfVfzvAHFlQyuZP11Fhv5fjL0bmjNO3Y289-ti3aPey7fQDmsr7eKREvPhl17Dj8nEDuQzcGxeHnrc5b7FbGwNNe_JvWFtB7ViubjkZWUh4YhYuGkzT4YiArxFuRsvUI4N8IslkC3tS3a4uZVF_-I1rz8SZdis5RiLbxB9BMlX3U3E8duxfsYxHoLC7OuOSQ1Y8K1-mbMHzNbW3SQbAKzVoMODAOB4O5HLFaBTN_kn7xkB9lg83F4mWnHtemVQiv8eig_uYlamSEonMb1CzSCi0A3GekXgCEGsEW4CjdjUvuq3oOIZmbqeeRjkwS60TGHbzYWFnsyXpFK1b_1rytawqb1SbcL2xDuILhApUetLWvTT2aD4nniWu264LU_jueYd5pCrmyvRLYJ-mzM_Ukf2kFxUA1Ky-9GB2Yr1VQ==/?documentId=7114397680633340w0"//嵌套网址
 
 </script>
 
