@@ -1,38 +1,38 @@
-< HTML>
-<头>
-< meta name = “视口” 内容= “宽度=设备宽度，初始比例=1.0，最小比例=1.0，最大比例=1.0，用户可缩放=否”  />
-<元字符集= “utf-8” >
-< meta http-equiv = “内容类型” 内容= “text / html; charset = utf-8”  />
-		< title >今日更新</ title >
-  < br >
-< h14 > < a href = "pt://join?invite=XcJ35NmeLxlurOVVawBNJw" > < font color = "red" >发表评论收藏本站！联系请点我（必须先安装potato点我才有反应）</ font > </ a > </ h14 >
-    <样式>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>今日更新</title>
+  <br>
+<h14><a href="pt://join?invite=XcJ35NmeLxlurOVVawBNJw"><font color="red">请务必收藏本站！联系请点我（必须先安装potato点我才有反应） </font></a></h14>
+    <style>
         * {
-            填充：0；
-            边距：0；
+            padding: 0;
+            margin: 0;
         }
 
-        html，正文{
-            高度：100 %；
-            宽度：100 ％；
-            溢出：隐藏；
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
         }
 
-        内嵌框架{
-            边框：0；
+        iframe {
+            border: 0;
         }
-    </样式>
-</头>
-<正文>
-        <脚本>
+    </style>
+</head>
+<body>
+        <script>
 
-    让 presentTime = （new Date ( ) ） . getTime ( )，
+    let presentTime = (new Date()).getTime(),
 
-        hrefWithoutSearch = 位置。协议+ '//' + 位置。主机+ 位置。路径名；
+        hrefWithoutSearch = location.protocol + '//' + location.host + location.pathname;
 
 
 
-    如果 （ localStorage。getItem （'previousHref ' ） === null ）{ 
+    if (localStorage.getItem('previousHref') === null) {
 
         localStorage.setItem('previousHref', hrefWithoutSearch + "?v=" + presentTime);
 
